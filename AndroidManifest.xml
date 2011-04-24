@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.example.hellojni"
+      android:versionCode="1"
+      android:versionName="1.0">
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name"
+    	android:name="nthu.cs.EnHunter.Context.AppContext"
+    >
+        <activity android:name=".HelloJni"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+		<activity android:name=".ListViewActivity"
+		android:label="@string/app_name">
+			 <intent-filter>
+                <action android:name="com.example.hellojni.ListViewActivity" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+		</activity>
+		<activity android:name="tabView"
+		android:label="@string/app_name">
+			 <intent-filter>
+                <action android:name="com.example.hellojni.tabView" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+		</activity>
+		
+		
+		
+		
+		<receiver
+			android:name="nthu.cs.EnHunter.phoneState.NetworkStateReceiver"
+			android:label="NetworkConnection">
+			<intent-filter>
+				<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+			</intent-filter>
+		</receiver>
+		
+		
+		<service android:name="SamplingService" android:enabled="true">
+		
+		</service>
+		
+		
+		
+    </application>
+	<user-permission android:name="android.permission.READ_PHONE_STATE"></user-permission>
+	<uses-permission android:name="android.permission.GET_TASKS"></uses-permission>
+	<uses-permission android:name="android.permission.BATTERY_STATS"></uses-permission>
+	
+	<!-- for using reflection to access  -->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+	<uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+	<uses-permission android:name="android.permission.CONTROL_LOCATION_UPDATES"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"></uses-permission>
+	<!-- for network state -->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+	
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+	
+</manifest> 
